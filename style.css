@@ -665,3 +665,47 @@ footer p {
   }
 
 }
+/* ==============================
+   MOBILE MARKETPLACE NAVIGATION
+   ============================== */
+
+@media (max-width: 700px) {
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 8px;
+    padding: 12px 10px;
+    background: white;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #ddd;
+  }
+
+  nav .nav-item,
+  nav .cart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 8px 12px;
+    border-radius: 7px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  nav .nav-item {
+    color: #333;
+  }
+
+  nav .nav-item:hover {
+    background: #f5f5f5;
+  }
+
+  nav .cart {
+    color: #e85d04;
+  }
+
+    }
