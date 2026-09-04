@@ -156,7 +156,35 @@ displayCart();
 // ==============================
 
 const checkoutItems = document.getElementById("checkout-items");
+const checkoutSubtotal = document.getElementById("checkout-subtotal");
+const deliveryFeeElement = document.getElementById("delivery-fee");
 const checkoutTotal = document.getElementById("checkout-total");
+const checkoutRegion = document.getElementById("checkout-region");
+
+function getDeliveryFee(region) {
+
+  const deliveryRates = {
+    "Greater Accra": 30,
+    "Ashanti": 40,
+    "Central": 40,
+    "Eastern": 40,
+    "Western": 50,
+    "Volta": 50,
+    "Oti": 60,
+    "Northern": 60,
+    "Savannah": 60,
+    "North East": 60,
+    "Upper East": 60,
+    "Upper West": 60,
+    "Bono": 50,
+    "Bono East": 50,
+    "Ahafo": 50,
+    "Western North": 50
+  };
+
+  return deliveryRates[region] || 0;
+}
+
 
 function displayCheckout() {
 
@@ -172,6 +200,14 @@ function displayCheckout() {
       <p>Your cart is empty.</p>
       <a href="index.html">Continue Shopping</a>
     `;
+
+    if (checkoutSubtotal) {
+      checkoutSubtotal.textContent = "₵0";
+    }
+
+    if (deliveryFeeElement) {
+      deliveryFeeElement.textContent = "₵0";
+    }
 
     if (checkoutTotal) {
       checkoutTotal.textContent = "₵0";
@@ -209,10 +245,44 @@ function displayCheckout() {
     `;
   });
 
-  if (checkoutTotal) {
-    checkoutTotal.textContent =
+
+  const selectedRegion = checkoutRegion
+    ? checkoutRegion.value
+    : "";
+
+  const deliveryFee = getDeliveryFee(selectedRegion);
+
+  const total = subtotal + deliveryFee;
+
+
+  if (checkoutSubtotal) {
+    checkoutSubtotal.textContent =
       "₵" + subtotal.toLocaleString();
   }
+
+  if (deliveryFeeElement) {
+    deliveryFeeElement.textContent =
+      deliveryFee === 0
+        ? "Select region"
+        : "₵" + deliveryFee.toLocaleString();
+  }
+
+  if (checkoutTotal) {
+    checkoutTotal.textContent =
+      "₵" + total.toLocaleString();
+  }
 }
+
+
+// Update delivery when region changes
+
+if (checkoutRegion) {
+
+  checkoutRegion.addEventListener("change", function() {
+    displayCheckout();
+  });
+
+}
+
 
 displayCheckout();
