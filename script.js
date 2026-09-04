@@ -11,7 +11,10 @@ function saveCart() {
 
 function updateCartCount() {
   if (cartNumber) {
-    const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+    const totalItems = cart.reduce(function(total, item) {
+      return total + item.quantity;
+    }, 0);
+
     cartNumber.textContent = totalItems;
   }
 }
@@ -20,18 +23,18 @@ cartButtons.forEach(function(button) {
 
   button.addEventListener("click", function() {
 
-    const productCard = button.closest(".product-card");
+    const product = button.closest(".product");
 
-    const productName = productCard.querySelector("h3").textContent;
-    const priceText = productCard.querySelector(".price").textContent;
+    const productName = product.querySelector("h3").textContent;
+    const priceText = product.querySelector("strong").textContent;
 
     const price = Number(
       priceText.replace("₵", "").replace(",", "").trim()
     );
 
-    const existingProduct = cart.find(
-      item => item.name === productName
-    );
+    const existingProduct = cart.find(function(item) {
+      return item.name === productName;
+    });
 
     if (existingProduct) {
       existingProduct.quantity++;
