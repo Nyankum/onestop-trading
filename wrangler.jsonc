@@ -3,5 +3,12 @@
   "compatibility_date": "2026-09-04",
   "assets": {
     "directory": "."
-  }
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "onestop-trading-db",
+      "database_id": "00000002-00000000-000050dc-647b96fc83a9f8a7f1f1b5f56f35e993"
+    }
+  ]
 }
