@@ -881,3 +881,160 @@ footer p {
   }
 
 }
+/* ==============================
+   CHECKOUT PAGE
+   ============================== */
+
+.checkout-page {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.checkout-page h1 {
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+.checkout-layout {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 30px;
+}
+
+.checkout-box,
+.checkout-summary {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 30px;
+}
+
+.checkout-box h2,
+.checkout-summary h2 {
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+
+#checkout-form {
+  display: flex;
+  flex-direction: column;
+}
+
+#checkout-form label {
+  margin-bottom: 7px;
+  font-weight: 600;
+}
+
+#checkout-form input,
+#checkout-form select,
+#checkout-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px;
+  margin-bottom: 18px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  font-family: inherit;
+}
+
+#checkout-form textarea {
+  resize: vertical;
+}
+
+.payment-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.payment-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px;
+  border: 1px solid #ddd;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.payment-option input {
+  width: auto !important;
+  margin: 0 !important;
+}
+
+.place-order-button {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 7px;
+  background: #e85d04;
+  color: white;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.place-order-button:hover {
+  background: #c94f03;
+}
+
+.checkout-summary {
+  height: fit-content;
+}
+
+.checkout-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.checkout-item-name {
+  font-weight: 600;
+}
+
+.checkout-item-quantity {
+  color: #666;
+  font-size: 14px;
+}
+
+.checkout-total {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 2px solid #ddd;
+  font-size: 20px;
+}
+
+.checkout-total strong {
+  color: #e85d04;
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+  .checkout-page {
+    margin: 25px auto;
+    padding: 0 15px;
+  }
+
+  .checkout-page h1 {
+    font-size: 27px;
+  }
+
+  .checkout-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .checkout-box,
+  .checkout-summary {
+    padding: 20px;
+  }
+
+}
