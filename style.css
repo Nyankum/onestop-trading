@@ -351,8 +351,8 @@ footer p {
   }
 
   .nav-item {
-    display: none;
-  }
+  display: block;
+}
 
   .hero {
     margin: 15px 3%;
