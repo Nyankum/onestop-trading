@@ -812,3 +812,72 @@ footer p {
   }
 
 }
+/* ==============================
+   ORDERS PAGE
+   ============================== */
+
+.orders-page {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+.orders-page h1 {
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+.orders-empty {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  text-align: center;
+  padding: 70px 20px;
+}
+
+.orders-icon {
+  font-size: 65px;
+  margin-bottom: 15px;
+}
+
+.orders-empty h2 {
+  margin-bottom: 10px;
+}
+
+.orders-empty p {
+  color: #666;
+  margin-bottom: 25px;
+}
+
+.orders-empty a {
+  display: inline-block;
+  padding: 13px 25px;
+  background: #e85d04;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.orders-empty a:hover {
+  background: #c94f03;
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+  .orders-page {
+    margin: 30px auto;
+    padding: 0 15px;
+  }
+
+  .orders-page h1 {
+    font-size: 26px;
+  }
+
+  .orders-empty {
+    padding: 55px 15px;
+  }
+
+}
