@@ -709,3 +709,106 @@ footer p {
   }
 
     }
+/* ==============================
+   ACCOUNT PAGE
+   ============================== */
+
+.account-page {
+  max-width: 500px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.account-box {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 35px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+.account-box h1 {
+  margin-top: 0;
+  font-size: 30px;
+  text-align: center;
+}
+
+.account-box > p {
+  text-align: center;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+#login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+#login-form label {
+  margin-bottom: 7px;
+  font-weight: 600;
+}
+
+#login-form input {
+  padding: 13px;
+  margin-bottom: 18px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+#login-form input:focus {
+  outline: none;
+  border-color: #e85d04;
+}
+
+#login-form button {
+  padding: 14px;
+  border: none;
+  border-radius: 6px;
+  background: #e85d04;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#login-form button:hover {
+  background: #c94f03;
+}
+
+.account-divider {
+  text-align: center;
+  margin: 25px 0;
+  color: #999;
+}
+
+.create-account {
+  display: block;
+  text-align: center;
+  padding: 13px;
+  border: 1px solid #e85d04;
+  border-radius: 6px;
+  color: #e85d04;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.create-account:hover {
+  background: #fff3eb;
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+  .account-page {
+    margin: 30px auto;
+    padding: 0 15px;
+  }
+
+  .account-box {
+    padding: 25px 20px;
+  }
+
+}
