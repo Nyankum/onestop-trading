@@ -151,3 +151,68 @@ function removeItem(index) {
 
 updateCartCount();
 displayCart();
+// ==============================
+// CHECKOUT PAGE
+// ==============================
+
+const checkoutItems = document.getElementById("checkout-items");
+const checkoutTotal = document.getElementById("checkout-total");
+
+function displayCheckout() {
+
+  if (!checkoutItems) {
+    return;
+  }
+
+  checkoutItems.innerHTML = "";
+
+  if (cart.length === 0) {
+
+    checkoutItems.innerHTML = `
+      <p>Your cart is empty.</p>
+      <a href="index.html">Continue Shopping</a>
+    `;
+
+    if (checkoutTotal) {
+      checkoutTotal.textContent = "₵0";
+    }
+
+    return;
+  }
+
+  let subtotal = 0;
+
+  cart.forEach(function(item) {
+
+    const itemTotal = item.price * item.quantity;
+
+    subtotal += itemTotal;
+
+    checkoutItems.innerHTML += `
+      <div class="checkout-item">
+
+        <div>
+          <div class="checkout-item-name">
+            ${item.name}
+          </div>
+
+          <div class="checkout-item-quantity">
+            Quantity: ${item.quantity}
+          </div>
+        </div>
+
+        <strong>
+          ₵${itemTotal.toLocaleString()}
+        </strong>
+
+      </div>
+    `;
+  });
+
+  if (checkoutTotal) {
+    checkoutTotal.textContent =
+      "₵" + subtotal.toLocaleString();
+  }
+}
+
+displayCheckout();
