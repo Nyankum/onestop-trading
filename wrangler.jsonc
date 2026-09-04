@@ -1,8 +1,10 @@
 {
   "name": "onestop-trading",
+  "main": "worker.js",
   "compatibility_date": "2026-09-04",
   "assets": {
-    "directory": "."
+    "directory": ".",
+    "binding": "ASSETS"
   },
   "d1_databases": [
     {
